@@ -1,4 +1,6 @@
-﻿namespace PL_language.States.State_1
+﻿using PL_language.Tokens.TokenInfo;
+
+namespace PL_language.States.State_1
 {
     internal class StartState : StateBase
     {
@@ -8,11 +10,18 @@
             HelperState helperState = new HelperState();
             if (helperState.CheckWhiteSpace(input))
             {
+                while (helperState.CheckWhiteSpace(input))
+                {
+                    dfa.SetCodePosition(dfa.GetCodePosition() + 1);
+                    input = dfa.code[dfa.GetCodePosition()];
+                }
+                dfa.SetCodePosition(dfa.GetCodePosition() - 1);
+                dfa.SetBaseToken(new WhiteSpaceToken());
                 return new StartState();
             }
             else if (helperState.CheckDivision(input))
             {
-                return new DivisionState(this);
+                return new DivisionState(this, this);
             }
             else if (helperState.CheckAllowedWordForFirst(input))
             {

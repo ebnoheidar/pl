@@ -1,7 +1,7 @@
 ﻿using PL_language.Tokens;
 using PL_language.Tokens.TokenInfo;
 
-namespace PL_language.States.State_1
+namespace PL_language.States
 {
     internal class HelperState
     {
@@ -16,8 +16,8 @@ namespace PL_language.States.State_1
         internal bool CheckSignChar(char character)
         {
             return Tokens.Where(item =>
-            (item.Type == TokenTypes.Operators && character == item.Lexem[0]) ||
-            (item.Type == TokenTypes.Sign && character == item.Lexem[0])).Count() > 0;
+            item.Type == TokenTypes.Operators && character == item.Lexem[0] ||
+            item.Type == TokenTypes.Sign && character == item.Lexem[0]).Count() > 0;
         }
         /// <summary>
         /// check a to z and numbers and underline
@@ -26,7 +26,7 @@ namespace PL_language.States.State_1
         /// <returns></returns>
         internal bool CheckAllowedWord(char character)
         {
-            return Char.IsLetterOrDigit(character) || character == '_';
+            return char.IsLetterOrDigit(character) || character == '_';
         }
         /// <summary>
         /// Check a to z and underline
@@ -35,7 +35,7 @@ namespace PL_language.States.State_1
         /// <returns></returns>
         internal bool CheckAllowedWordForFirst(char character)
         {
-            return Char.IsLetter(character) || character == '_';
+            return char.IsLetter(character) || character == '_';
         }
         internal BaseToken IdentifyWordToken(string token)
         {

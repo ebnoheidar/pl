@@ -1,16 +1,18 @@
-﻿namespace PL_language.States.State_1
+﻿namespace PL_language.States
 {
     internal class CommentState : StateBase
     {
-        internal CommentState(StateBase beforeState)
+        private StateBase backState { get; set; }
+        internal CommentState(StateBase beforeState, StateBase backState)
         {
             StateName = "comment";
             BeforeState = beforeState;
+            this.backState = backState;
         }
         public override StateBase ReadCharacter(char input, DFA dfa)
         {
             ReadComments(input, dfa);
-            return new StartState();
+            return backState;
         }
         public void ReadComments(char input, DFA dfa)
         {
