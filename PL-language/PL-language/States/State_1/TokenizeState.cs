@@ -1,4 +1,5 @@
-﻿using PL_language.Tokens;
+﻿using PL_language.States.KeywordStates;
+using PL_language.Tokens;
 
 namespace PL_language.States.State_1
 {
@@ -24,9 +25,15 @@ namespace PL_language.States.State_1
             }
             dfa.SetCodePosition(dfa.GetCodePosition() - 1);
             BaseToken tokenIdentify = helperState.IdentifyWordToken(token);
-
-
-
+            if (tokenIdentify.Lexem == "bool" || tokenIdentify.Lexem == "char" ||
+                tokenIdentify.Lexem == "int")
+            {
+                dfa.SetBaseToken(tokenIdentify);
+                return new VariableState();
+            }
+            else
+                throw new Exception($"Error: expected unqualified-id before {token}/" +
+                    $" position: {dfa.GetCodePosition()} (Tokenize State #103)");
         }
     }
 }

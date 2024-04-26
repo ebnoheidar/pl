@@ -14,6 +14,13 @@
             {
                 return new DivisionState(this);
             }
+            else if (helperState.CheckAllowedWordForFirst(input))
+            {
+                return new TokenizeState();
+            }
+            else
+                throw new Exception($"Error in {input} input character /" +
+                    $" position: {dfa.GetCodePosition()} (Start State #104)");
         }
     }
 }

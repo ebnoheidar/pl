@@ -19,12 +19,27 @@ namespace PL_language.States.State_1
             (item.Type == TokenTypes.Operators && character == item.Lexem[0]) ||
             (item.Type == TokenTypes.Sign && character == item.Lexem[0])).Count() > 0;
         }
-        internal bool CheckAllowedWord(char character) {
+        /// <summary>
+        /// check a to z and numbers and underline
+        /// </summary>
+        /// <param name="character"></param>
+        /// <returns></returns>
+        internal bool CheckAllowedWord(char character)
+        {
             return Char.IsLetterOrDigit(character) || character == '_';
+        }
+        /// <summary>
+        /// Check a to z and underline
+        /// </summary>
+        /// <param name="character"></param>
+        /// <returns></returns>
+        internal bool CheckAllowedWordForFirst(char character)
+        {
+            return Char.IsLetter(character) || character == '_';
         }
         internal BaseToken IdentifyWordToken(string token)
         {
-            List<BaseToken> tokens =Tokens.Where(item => item.Lexem == token).ToList();
+            List<BaseToken> tokens = Tokens.Where(item => item.Lexem == token).ToList();
             if (tokens.Count() == 1)
                 return tokens[0];
             else
