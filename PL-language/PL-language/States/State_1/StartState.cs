@@ -10,13 +10,7 @@ namespace PL_language.States.State_1
             HelperState helperState = new HelperState();
             if (helperState.CheckWhiteSpace(input))
             {
-                while (helperState.CheckWhiteSpace(input))
-                {
-                    dfa.SetCodePosition(dfa.GetCodePosition() + 1);
-                    input = dfa.code[dfa.GetCodePosition()];
-                }
-                dfa.SetCodePosition(dfa.GetCodePosition() - 1);
-                dfa.SetBaseToken(new WhiteSpaceToken());
+                helperState.WhiteSpaceReader(dfa, input);
                 return new StartState();
             }
             else if (helperState.CheckDivision(input))

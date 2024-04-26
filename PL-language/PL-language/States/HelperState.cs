@@ -47,5 +47,15 @@ namespace PL_language.States
                 return new IdToken();
             }
         }
+        internal void WhiteSpaceReader(DFA dfa, char input)
+        {
+            while (CheckWhiteSpace(input))
+            {
+                dfa.SetCodePosition(dfa.GetCodePosition() + 1);
+                input = dfa.code[dfa.GetCodePosition()];
+            }
+            dfa.SetCodePosition(dfa.GetCodePosition() - 1);
+            dfa.SetBaseToken(new WhiteSpaceToken());
+        }
     }
 }
