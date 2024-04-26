@@ -12,7 +12,7 @@ namespace PL_language.Tokens.TokenInfo
         {
             Lexem = "";
             Token = "T_String";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.ConstantString;
         }
     }
 }

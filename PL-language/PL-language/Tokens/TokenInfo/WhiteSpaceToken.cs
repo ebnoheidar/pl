@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PL_language.Tokens.TokenInfo
+﻿namespace PL_language.Tokens.TokenInfo
 {
     internal class WhiteSpaceToken : BaseToken
     {
@@ -12,7 +6,7 @@ namespace PL_language.Tokens.TokenInfo
         {
             Lexem = " ";
             Token = "T_Whitespaⅽe";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.Whitespace;
         }
     }
 }

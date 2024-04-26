@@ -12,7 +12,7 @@ namespace PL_language.Tokens.TokenInfo
         {
             Lexem = "\n";
             Token = "T_Whitespaⅽe";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.Whitespace;
         }
     }
 }

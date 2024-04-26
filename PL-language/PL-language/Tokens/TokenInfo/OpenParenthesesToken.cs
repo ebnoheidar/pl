@@ -6,7 +6,7 @@
         {
             Lexem = "(";
             Token = "T_ⅬP";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.Sign;
         }
     }
 }

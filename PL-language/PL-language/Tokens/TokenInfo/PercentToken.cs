@@ -11,8 +11,8 @@ namespace PL_language.Tokens.TokenInfo
         public PercentToken()
         {
             Lexem = "%";
-            Token = "T_AOp_RⅯⅼ";
-            Type = TokenTypes.Keyword;
+            Token = "T_AOp_RⅯ";
+            Type = TokenTypes.Operators;
         }
     }
 }

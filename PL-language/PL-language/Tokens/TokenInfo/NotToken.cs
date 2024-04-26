@@ -12,7 +12,7 @@ namespace PL_language.Tokens.TokenInfo
         {
             Lexem = "!";
             Token = "T_ⅬOp_NOT";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.Operators;
         }
     }
 }

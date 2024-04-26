@@ -11,8 +11,8 @@ namespace PL_language.Tokens.TokenInfo
         public TabToken()
         {
             Lexem = "   ";
-            Token = "T_Whitespaⅼ";
-            Type = TokenTypes.Keyword;
+            Token = "T_Whitespace";
+            Type = TokenTypes.Whitespace;
         }
     }
 }

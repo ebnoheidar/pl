@@ -12,7 +12,7 @@ namespace PL_language.Tokens.TokenInfo
         {
             Lexem = ";";
             Token = "T_Seⅿiⅽoⅼon";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.Sign;
         }
     }
 }

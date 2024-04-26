@@ -12,7 +12,7 @@ namespace PL_language.Tokens.TokenInfo
         {
             Lexem = "+";
             Token = "T_AOp_PⅬ";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.Operators;
         }
     }
 }

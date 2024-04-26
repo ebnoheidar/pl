@@ -12,7 +12,7 @@ namespace PL_language.Tokens.TokenInfo
         {
             Lexem = "!=";
             Token = "T_ROp_NE";
-            Type = TokenTypes.Keyword;
+            Type = TokenTypes.Operators;
         }
     }
 }
