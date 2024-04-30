@@ -15,6 +15,7 @@ namespace PL_language.States.State_1
             }
             else if (helperState.CheckDivision(input))
             {
+                dfa.codePosition++;
                 return new DivisionState(this, this);
             }
             else if (helperState.CheckAllowedWordForFirst(input))

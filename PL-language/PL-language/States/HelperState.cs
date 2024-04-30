@@ -54,8 +54,12 @@ namespace PL_language.States
                 dfa.SetCodePosition(dfa.GetCodePosition() + 1);
                 input = dfa.code[dfa.GetCodePosition()];
             }
-            dfa.SetCodePosition(dfa.GetCodePosition() - 1);
             dfa.SetBaseToken(new WhiteSpaceToken());
+        }
+        internal BaseToken GetOperatorToken(string lexem)
+        {
+            return Tokens.Where(item => item.Type == TokenTypes.Operators &&
+            item.Lexem == lexem).ToArray().First();
         }
     }
 }

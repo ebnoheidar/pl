@@ -21,6 +21,9 @@ namespace PL_language.States.KeywordStates
             {
                 return new TokenWordState();
             }
+            else
+                throw new Exception($"Error: in variable state/" +
+                   $" position: {dfa.GetCodePosition()} (Tokenize State #103)");
         }
     }
 }

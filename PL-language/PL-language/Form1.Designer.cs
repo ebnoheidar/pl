@@ -33,9 +33,11 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
             richTextBox1 = new RichTextBox();
+            tabPage2 = new TabPage();
             richTextBox2 = new RichTextBox();
+            label1 = new Label();
+            flowLayoutPanel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -64,6 +66,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = SystemColors.AppWorkspace;
+            flowLayoutPanel1.Controls.Add(label1);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.Location = new Point(0, 585);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -92,6 +95,16 @@
             tabPage1.Text = "input";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // richTextBox1
+            // 
+            richTextBox1.Dock = DockStyle.Fill;
+            richTextBox1.Font = new Font("Segoe UI", 12F);
+            richTextBox1.Location = new Point(3, 3);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(1188, 452);
+            richTextBox1.TabIndex = 0;
+            richTextBox1.Text = "";
+            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(richTextBox2);
@@ -103,16 +116,6 @@
             tabPage2.Text = "output";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
-            // 
-            richTextBox1.Dock = DockStyle.Fill;
-            richTextBox1.Font = new Font("Segoe UI", 12F);
-            richTextBox1.Location = new Point(3, 3);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(1188, 452);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
-            // 
             // richTextBox2
             // 
             richTextBox2.Dock = DockStyle.Fill;
@@ -121,6 +124,18 @@
             richTextBox2.Size = new Size(1188, 452);
             richTextBox2.TabIndex = 0;
             richTextBox2.Text = "";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.ForeColor = Color.IndianRed;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(35, 32);
+            label1.TabIndex = 5;
+            label1.Text = "   ";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
@@ -135,6 +150,8 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
@@ -150,5 +167,6 @@
         private RichTextBox richTextBox1;
         private TabPage tabPage2;
         private RichTextBox richTextBox2;
+        private Label label1;
     }
 }

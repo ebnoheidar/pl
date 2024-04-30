@@ -9,12 +9,12 @@ namespace PL_language.States.State_1
         {
             HelperState helperState = new HelperState();
             string token = "";
-            while (!helperState.CheckWhiteSpace(input) && !helperState.CheckSignChar(input))
+            while (!helperState.CheckWhiteSpace(input) && !helperState.CheckSignChar(input) && helperState.CheckAllowedWord(input))
             {
                 if (helperState.CheckAllowedWord(input))
                 {
                     token += input;
-                    dfa.SetCodePosition(dfa.GetCodePosition() + 1);
+                    dfa.codePosition++;
                     input = dfa.code[dfa.GetCodePosition()];
                 }
                 else

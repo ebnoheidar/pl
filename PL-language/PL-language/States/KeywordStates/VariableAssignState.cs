@@ -13,7 +13,21 @@ namespace PL_language.States.KeywordStates
                 return this;
             }
             else if (input == '\"')
-                return StringState();
+                return new StringState();
+            else if(Char.IsDigit(input))
+            {
+                dfa.SetCodePosition(dfa.GetCodePosition()-1);
+                return new NumberState("");
+            }
+            else if (input == '-' || input == '+')
+            {
+                dfa.SetCodePosition(dfa.GetCodePosition() - 1);
+                return new SignNumberState();
+            }
+            else
+                throw  new Exception($"Error: error in assign/" +
+     $" position: {dfa.GetCodePosition()} (Variable Assign State #112)");
+
         }
     }
 }

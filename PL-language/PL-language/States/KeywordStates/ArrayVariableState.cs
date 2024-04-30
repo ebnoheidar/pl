@@ -4,7 +4,7 @@
     {
         public override StateBase ReadCharacter(char input, DFA dfa)
         {
-           
+            throw new Exception("unknown");
         }
     }
 }

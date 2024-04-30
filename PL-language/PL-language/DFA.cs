@@ -6,13 +6,15 @@ namespace PL_language
     internal class DFA
     {
         public string code { get; set; }
-        private int codePosition { get; set; }
+        public int codePosition { get; set; }
         private StateBase currentState { get; set; }
         private string tokens { get; set; }
+        public char CharacterPointer { get { return code[codePosition]; } }
         public void SetState(StateBase state)
         {
+            if (code.Length == codePosition - 1)
+                return;
             currentState = state;
-            codePosition += 1;
             SetState(currentState.ReadCharacter(code[codePosition], this));
         }
         public void SetBaseToken(BaseToken token)

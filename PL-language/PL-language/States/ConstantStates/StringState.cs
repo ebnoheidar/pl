@@ -18,8 +18,7 @@ namespace PL_language.States.ConstantStates
                 return new FinalState(new StartState());
             }
             else
-                throw new Exception($"expected ‘;’ /" +
-                    $" position: {dfa.GetCodePosition()} (String State State #108)");
+                return new StringState();
         }
     }
 }
