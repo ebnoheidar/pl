@@ -10,7 +10,7 @@ namespace PL_language.Tokens.TokenInfo
     {
         public TabToken()
         {
-            Lexem = "   ";
+            Lexem = "\t";
             Token = "T_Whitespace";
             Type = TokenTypes.Whitespace;
         }

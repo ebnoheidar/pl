@@ -57,6 +57,7 @@ namespace PL_language
             HelperState.Tokens.Add(new Tokens.TokenInfo.CharacterToken());
             HelperState.Tokens.Add(new Tokens.TokenInfo.CharToken());
             HelperState.Tokens.Add(new Tokens.TokenInfo.CloseBlockToken());
+            HelperState.Tokens.Add(new Tokens.TokenInfo.CloseParenthesesToken());
             HelperState.Tokens.Add(new Tokens.TokenInfo.CloseBracketToken());
             HelperState.Tokens.Add(new Tokens.TokenInfo.CommaToken());
             HelperState.Tokens.Add(new Tokens.TokenInfo.CommentToken());
