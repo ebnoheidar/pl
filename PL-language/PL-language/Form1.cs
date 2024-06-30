@@ -34,18 +34,17 @@ namespace PL_language
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DFA dfa = new DFA();
-            dfa.code = richTextBox1.Text;
-            dfa.SetCodePosition(-1);
+            DFA.code = richTextBox1.Text;
+            DFA.codePosition = 0;
             try
              {
-                dfa.SetState(new StartState());
-                richTextBox2.Text = dfa.getTokens();
+                DFA.SetState(new StartState());
+                richTextBox2.Text = DFA.getTokens();
             }
             catch (Exception error)
             {
                 label1.Text = error.Message;
-                richTextBox2.Text = dfa.getTokens();
+                richTextBox2.Text = DFA.getTokens();
 
             }
         }

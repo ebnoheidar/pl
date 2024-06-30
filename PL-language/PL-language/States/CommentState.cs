@@ -9,20 +9,19 @@
             BeforeState = beforeState;
             this.backState = backState;
         }
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
-            ReadComments(input, dfa);
+            ReadComments();
             return backState;
         }
-        public void ReadComments(char input, DFA dfa)
+        public void ReadComments()
         {
             HelperState helperState = new HelperState();
-            while (!helperState.CheckNewLine(input))
+            while (!helperState.CheckNewLine(DFA.CharacterPointer))
             {
-                dfa.SetCodePosition(dfa.GetCodePosition() + 1);
-                input = dfa.code[dfa.GetCodePosition()];
+                DFA.codePosition++;
             }
-            dfa.SetBaseToken(new Tokens.TokenInfo.NewLineToken());
+            DFA.SetBaseToken(new Tokens.TokenInfo.NewLineToken());
         }
     }
 }

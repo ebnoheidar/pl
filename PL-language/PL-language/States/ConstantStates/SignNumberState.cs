@@ -3,27 +3,26 @@
     internal class SignNumberState : StateBase
 
     {
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             HelperState helperState = new HelperState();
-            if (helperState.CheckWhiteSpace(input))
+            if (helperState.CheckWhiteSpace(DFA.CharacterPointer))
             {
-                helperState.WhiteSpaceReader(dfa, input);
+                helperState.WhiteSpaceReader();
                 return new SignNumberState();
             }
-            else if (input == '+')
+            else if (DFA.CharacterPointer == '+')
             {
-                dfa.SetBaseToken(new Tokens.TokenInfo.PlusToken());
+                DFA.SetBaseToken(new Tokens.TokenInfo.PlusToken());
             }
-            else if (input == '-')
+            else if (DFA.CharacterPointer == '-')
             {
-                dfa.SetBaseToken(new Tokens.TokenInfo.MinusToken());
+                DFA.SetBaseToken(new Tokens.TokenInfo.MinusToken());
             }
             else throw new Exception($"Error: Error in sign number /" +
-                    $" position: {dfa.GetCodePosition()} (Sign Number State #111)"); helperState.WhiteSpaceReader(dfa, input);
-            dfa.SetCodePosition(dfa.GetCodePosition() + 1);
-            input = dfa.code[dfa.GetCodePosition()];
-            return new NumberState(input.ToString());
+                    $" position: {DFA.GetCodePosition()} (Sign Number State #111)"); helperState.WhiteSpaceReader();
+            DFA.codePosition++;
+            return new NumberState(DFA.CharacterPointer.ToString());
         }
     }
 }

@@ -4,17 +4,16 @@ namespace PL_language.States.ConstantStates
 {
     internal class StringState : StateBase
     {
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
-            if (input == '\\')
+            if (DFA.CharacterPointer == '\\')
             {
-                dfa.SetCodePosition(dfa.GetCodePosition() + 1);
-                input = dfa.code[dfa.GetCodePosition()];
+                DFA.codePosition++;
                 return this;
             }
-            else if (input == '\"')
+            else if (DFA.CharacterPointer == '\"')
             {
-                dfa.SetBaseToken(new Tokens.TokenInfo.StringToken());
+                DFA.SetBaseToken(new Tokens.TokenInfo.StringToken());
                 return new FinalState(new StartState());
             }
             else

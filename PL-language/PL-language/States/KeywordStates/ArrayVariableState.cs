@@ -2,7 +2,7 @@
 {
     internal class ArrayVariableState : StateBase
     {
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             throw new Exception("unknown");
         }

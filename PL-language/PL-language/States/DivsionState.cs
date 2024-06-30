@@ -12,17 +12,17 @@ namespace PL_language.States
             BeforeState = beforeState;
             this.backState = backState;
         }
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             HelperState helperState = new HelperState();
-            if ((BeforeState is StartState || BeforeState is VariableState) && helperState.CheckDivision(input))
+            if ((BeforeState is StartState || BeforeState is VariableState) && helperState.CheckDivision(DFA.CharacterPointer))
             {
                 return new CommentState(this, backState);
             }
             else
             {
-                throw new Exception($"Error in {input} input character /" +
-                    $" position: {dfa.GetCodePosition()} (Divivsion State #101)");
+                throw new Exception($"Error in {DFA.CharacterPointer} dfa.CharacterPointer character /" +
+                    $" position: {DFA.GetCodePosition()} (Divivsion State #101)");
             }
         }
     }

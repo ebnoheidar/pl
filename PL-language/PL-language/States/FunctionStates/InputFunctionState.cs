@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PL_language.States.FunctionStates
 {
-    internal class InputFunctionState : StateBase
+    internal class CharacterPointerFunctionState : StateBase
     {
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             throw new NotImplementedException();
         }

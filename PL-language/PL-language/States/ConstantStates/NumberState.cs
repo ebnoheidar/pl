@@ -9,25 +9,25 @@ namespace PL_language.States.ConstantStates
         {
             Number = beforNumber;
         }
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             HelperState helperState = new HelperState();
-            Number += input;
+            Number += DFA.CharacterPointer;
 
-            if (helperState.CheckWhiteSpace(input) || input == ';')
+            if (helperState.CheckWhiteSpace(DFA.CharacterPointer) || DFA.CharacterPointer == ';')
             {
                 if (Number.StartsWith("0x"))
-                    dfa.SetBaseToken(new Tokens.TokenInfo.HexadecimalToken());
+                    DFA.SetBaseToken(new Tokens.TokenInfo.HexadecimalToken());
                 else
-                    dfa.SetBaseToken(new Tokens.TokenInfo.DecimalToken());
-                dfa.SetCodePosition(dfa.GetCodePosition() - 1);
+                    DFA.SetBaseToken(new Tokens.TokenInfo.DecimalToken());
+                DFA.codePosition++;
                 return new FinalState(new StartState());
             }
-            else if (Char.IsDigit(input))
+            else if (Char.IsDigit(DFA.CharacterPointer))
             {
                 return new NumberState(Number);
             }
-            else if (input == 'x')
+            else if (DFA.CharacterPointer == 'x')
             {
                 if (Number == "0")
                 {
@@ -35,19 +35,19 @@ namespace PL_language.States.ConstantStates
                 }
                 else
                     throw new Exception($"Error: {Number} was not declared in this scope /" +
-                    $" position: {dfa.GetCodePosition()} (Number State #108)");
+                    $" position: {DFA.GetCodePosition()} (Number State #108)");
             }
-            else if (Char.IsLetter(input) && Number.StartsWith("0x"))
+            else if (Char.IsLetter(DFA.CharacterPointer) && Number.StartsWith("0x"))
             {
-                if ((input >= 65 && input <= 70) || (input >= 97 && input <= 102))
+                if ((DFA.CharacterPointer >= 65 && DFA.CharacterPointer <= 70) || (DFA.CharacterPointer >= 97 && DFA.CharacterPointer <= 102))
                 { return new NumberState(Number); }
                 else
                     throw new Exception($"Error: unable to find numeric literal operator {Number}/" +
-                    $" position: {dfa.GetCodePosition()} (Divivsion State #109)");
+                    $" position: {DFA.GetCodePosition()} (Divivsion State #109)");
             }
             else
                 throw new Exception($"Error: Not allowed character after number {Number} /" +
-                    $" position: {dfa.GetCodePosition()} (Number State #110)");
+                    $" position: {DFA.GetCodePosition()} (Number State #110)");
         }
     }
 }

@@ -4,29 +4,28 @@ namespace PL_language.States.KeywordStates
 {
     internal class VariableAssignState : StateBase
     {
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             HelperState helperState = new HelperState();
-            if (helperState.CheckWhiteSpace(input))
+            if (helperState.CheckWhiteSpace(DFA.CharacterPointer))
             {
-                helperState.WhiteSpaceReader(dfa, input);
+                helperState.WhiteSpaceReader();
                 return this;
             }
-            else if (input == '\"')
+            else if (DFA.CharacterPointer == '\"')
                 return new StringState();
-            else if(Char.IsDigit(input))
+            else if (Char.IsDigit(DFA.CharacterPointer))
             {
-                dfa.SetCodePosition(dfa.GetCodePosition()-1);
+                DFA.codePosition--;
                 return new NumberState("");
             }
-            else if (input == '-' || input == '+')
+            else if (DFA.CharacterPointer == '-' || DFA.CharacterPointer == '+')
             {
-                dfa.SetCodePosition(dfa.GetCodePosition() - 1);
+                DFA.codePosition--;
                 return new SignNumberState();
             }
             else
-                throw  new Exception($"Error: error in assign/" +
-     $" position: {dfa.GetCodePosition()} (Variable Assign State #112)");
+                throw new Exception($"Error: error in assign/" + $" position: {DFA.GetCodePosition()} (Variable Assign State #112)");
 
         }
     }

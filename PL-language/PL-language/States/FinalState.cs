@@ -10,23 +10,23 @@ namespace PL_language.States
             StateName = "Final";
             this.backState = backState;
         }
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             HelperState helperState = new HelperState();
-            if (helperState.CheckWhiteSpace(input))
+            if (helperState.CheckWhiteSpace(DFA.CharacterPointer))
             {
-                helperState.WhiteSpaceReader(dfa, input);
+                helperState.WhiteSpaceReader();
                 return this;
             }
-            else if (input == ';')
+            else if (DFA.CharacterPointer == ';')
             {
-                dfa.SetBaseToken(new SemicolonToken());
+                DFA.SetBaseToken(new SemicolonToken());
                 return backState;
             }
             else
             {
                 throw new Exception($"expected ‘;’ /" +
-                    $" position: {dfa.GetCodePosition()} (Final State #107)");
+                    $" position: {DFA.GetCodePosition()} (Final State #107)");
             }
         }
     }

@@ -5,35 +5,37 @@ namespace PL_language.States.State_1
 {
     internal class TokenizeState : StateBase
     {
-        public override StateBase ReadCharacter(char input, DFA dfa)
+        public override StateBase ReadCharacter()
         {
             HelperState helperState = new HelperState();
             string token = "";
-            while (!helperState.CheckWhiteSpace(input) && !helperState.CheckSignChar(input) && helperState.CheckAllowedWord(input))
+            while (!helperState.CheckWhiteSpace(DFA.CharacterPointer) && !helperState.CheckSignChar(DFA.CharacterPointer) && helperState.CheckAllowedWord(DFA.CharacterPointer))
             {
-                if (helperState.CheckAllowedWord(input))
+                if (helperState.CheckAllowedWord(DFA.CharacterPointer))
                 {
-                    token += input;
-                    dfa.codePosition++;
-                    input = dfa.code[dfa.GetCodePosition()];
+                    token += DFA.CharacterPointer;
+                    DFA.codePosition++;
                 }
                 else
                 {
-                    throw new Exception($"Identifier \"{input}\" undefined /" +
-                    $" position: {dfa.GetCodePosition()} (Divivsion State #102)");
+                    throw new Exception($"Identifier \"{DFA.CharacterPointer}\" undefined /" +
+                    $" position: {DFA.GetCodePosition()} (Divivsion State #102)");
                 }
             }
-            dfa.SetCodePosition(dfa.GetCodePosition() - 1);
             BaseToken tokenIdentify = helperState.IdentifyWordToken(token);
             if (tokenIdentify.Lexem == "bool" || tokenIdentify.Lexem == "char" ||
                 tokenIdentify.Lexem == "int")
             {
-                dfa.SetBaseToken(tokenIdentify);
-                return new VariableState();
+                DFA.codePosition++;
+                DFA.SetBaseToken(tokenIdentify);
+                return new TokenizeState();
             }
             else
-                throw new Exception($"Error: expected unqualified-id before {token}/" +
-                    $" position: {dfa.GetCodePosition()} (Tokenize State #103)");
+            {
+                DFA.codePosition++;
+                DFA.SetBaseToken(tokenIdentify);
+                return new TokenizeState();
+            }
         }
     }
 }

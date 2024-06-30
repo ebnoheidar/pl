@@ -3,30 +3,26 @@ using PL_language.Tokens;
 
 namespace PL_language
 {
-    internal class DFA
+    internal static class DFA
     {
-        public string code { get; set; }
-        public int codePosition { get; set; }
-        private StateBase currentState { get; set; }
-        private string tokens { get; set; }
-        public char CharacterPointer { get { return code[codePosition]; } }
-        public void SetState(StateBase state)
+        public static string code { get; set; }
+        public static int codePosition { get; set; }
+        private static StateBase currentState { get; set; }
+        private static string tokens { get; set; }
+        public static char CharacterPointer { get { return code[codePosition]; } }
+        public static void SetState(StateBase state)
         {
             if (code.Length == codePosition - 1)
                 return;
             currentState = state;
-            SetState(currentState.ReadCharacter(code[codePosition], this));
+            SetState(currentState.ReadCharacter());
         }
-        public void SetBaseToken(BaseToken token)
+        public static void SetBaseToken(BaseToken token)
         {
             tokens = tokens + Environment.NewLine + token.Token;
         }
-        public void SetCodePosition(int codePosition)
-        {
-            this.codePosition = codePosition;
-        }
-        public int GetCodePosition() { return codePosition; }
-        public string getTokens()
+        public static int GetCodePosition() { return codePosition; }
+        public static string getTokens()
         {
             return tokens;
         }

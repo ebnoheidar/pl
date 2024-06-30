@@ -92,7 +92,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1194, 458);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "input";
+            tabPage1.Text = "dfa.CharacterPointer";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // richTextBox1

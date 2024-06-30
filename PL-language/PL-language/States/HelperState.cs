@@ -47,14 +47,13 @@ namespace PL_language.States
                 return new IdToken();
             }
         }
-        internal void WhiteSpaceReader(DFA dfa, char input)
+        internal void WhiteSpaceReader()
         {
-            while (CheckWhiteSpace(input))
+            while (CheckWhiteSpace(DFA.CharacterPointer))
             {
-                dfa.SetCodePosition(dfa.GetCodePosition() + 1);
-                input = dfa.code[dfa.GetCodePosition()];
+                DFA.codePosition++;
             }
-            dfa.SetBaseToken(new WhiteSpaceToken());
+            DFA.SetBaseToken(new WhiteSpaceToken());
         }
         internal BaseToken GetOperatorToken(string lexem)
         {
