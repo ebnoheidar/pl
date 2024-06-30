@@ -19,7 +19,7 @@ namespace PL_language
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "open file";
-            ofd.Filter = "txt files (*.txt)|*.txt|c files(*.c)|*.c|All files (*.*)|*.*";
+            ofd.Filter = "c files(*.c)|*.c|All files (*.*)|*.*";
 
             string fileAddress = "";
 

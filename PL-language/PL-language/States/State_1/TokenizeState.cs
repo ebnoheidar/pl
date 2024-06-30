@@ -1,5 +1,6 @@
 ﻿using PL_language.States.KeywordStates;
 using PL_language.Tokens;
+using PL_language.Tokens.TokenInfo;
 
 namespace PL_language.States.State_1
 {
@@ -9,6 +10,13 @@ namespace PL_language.States.State_1
         {
             HelperState helperState = new HelperState();
             string token = "";
+            if (helperState.CheckWhiteSpace(DFA.CharacterPointer))
+            {
+                helperState.WhiteSpaceReader();
+                DFA.SetBaseToken(new WhiteSpaceToken());
+            }
+            else if (helperState.CheckSignChar(DFA.CharacterPointer))
+                return new SignState();
             while (!helperState.CheckWhiteSpace(DFA.CharacterPointer) && !helperState.CheckSignChar(DFA.CharacterPointer) && helperState.CheckAllowedWord(DFA.CharacterPointer))
             {
                 if (helperState.CheckAllowedWord(DFA.CharacterPointer))
@@ -26,13 +34,17 @@ namespace PL_language.States.State_1
             if (tokenIdentify.Lexem == "bool" || tokenIdentify.Lexem == "char" ||
                 tokenIdentify.Lexem == "int")
             {
-                DFA.codePosition++;
                 DFA.SetBaseToken(tokenIdentify);
+                return new TokenizeState();
+            }
+            else if (tokenIdentify.Type != TokenTypes.Id)
+            {
+                DFA.SetBaseToken(tokenIdentify);
+                DFA.codePosition++;
                 return new TokenizeState();
             }
             else
             {
-                DFA.codePosition++;
                 DFA.SetBaseToken(tokenIdentify);
                 return new TokenizeState();
             }
