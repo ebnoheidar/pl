@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "F:\\project\\pl\\pl-v2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|f:\\project\\pl\\pl-v2\\pl-v2\\lexicalanalyzer\\lexeme\\operatorlexemes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|solutionrelative:pl-v2\\lexicalanalyzer\\lexeme\\operatorlexemes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|f:\\project\\pl\\pl-v2\\pl-v2\\lexicalanalyzer\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|solutionrelative:pl-v2\\lexicalanalyzer\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|f:\\project\\pl\\pl-v2\\pl-v2\\lexicalanalyzer\\lexeme\\keywordlexemes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|solutionrelative:pl-v2\\lexicalanalyzer\\lexeme\\keywordlexemes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|f:\\project\\pl\\pl-v2\\pl-v2\\lexicalanalyzer\\lexeme\\lexeme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|solutionrelative:pl-v2\\lexicalanalyzer\\lexeme\\lexeme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|f:\\project\\pl\\pl-v2\\pl-v2\\lexicalanalyzer\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|solutionrelative:pl-v2\\lexicalanalyzer\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{37BE38B5-9B84-442C-B44E-CC350A283141}|pl-v2\\pl-v2.csproj|F:\\project\\pl\\pl-v2\\pl-v2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "OperatorLexemes.cs",
+              "DocumentMoniker": "F:\\project\\pl\\pl-v2\\pl-v2\\LexicalAnalyzer\\Lexeme\\OperatorLexemes.cs",
+              "RelativeDocumentMoniker": "pl-v2\\LexicalAnalyzer\\Lexeme\\OperatorLexemes.cs",
+              "ToolTip": "F:\\project\\pl\\pl-v2\\pl-v2\\LexicalAnalyzer\\Lexeme\\OperatorLexemes.cs",
+              "RelativeToolTip": "pl-v2\\LexicalAnalyzer\\Lexeme\\OperatorLexemes.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwDoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T10:49:46.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Lexeme.cs",
               "DocumentMoniker": "F:\\project\\pl\\pl-v2\\pl-v2\\LexicalAnalyzer\\Lexeme\\Lexeme.cs",
               "RelativeDocumentMoniker": "pl-v2\\LexicalAnalyzer\\Lexeme\\Lexeme.cs",
@@ -38,37 +55,36 @@
               "RelativeToolTip": "pl-v2\\LexicalAnalyzer\\Lexeme\\Lexeme.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T10:09:21.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T10:09:21.513Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "KeywordLexemes.cs",
               "DocumentMoniker": "F:\\project\\pl\\pl-v2\\pl-v2\\LexicalAnalyzer\\Lexeme\\KeywordLexemes.cs",
               "RelativeDocumentMoniker": "pl-v2\\LexicalAnalyzer\\Lexeme\\KeywordLexemes.cs",
               "ToolTip": "F:\\project\\pl\\pl-v2\\pl-v2\\LexicalAnalyzer\\Lexeme\\KeywordLexemes.cs",
               "RelativeToolTip": "pl-v2\\LexicalAnalyzer\\Lexeme\\KeywordLexemes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T10:07:14.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T10:07:14.171Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "LexicalAnalyzer.cs",
               "DocumentMoniker": "F:\\project\\pl\\pl-v2\\pl-v2\\LexicalAnalyzer\\LexicalAnalyzer.cs",
               "RelativeDocumentMoniker": "pl-v2\\LexicalAnalyzer\\LexicalAnalyzer.cs",
               "ToolTip": "F:\\project\\pl\\pl-v2\\pl-v2\\LexicalAnalyzer\\LexicalAnalyzer.cs",
               "RelativeToolTip": "pl-v2\\LexicalAnalyzer\\LexicalAnalyzer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T10:02:59.843Z"
+              "WhenOpened": "2025-03-21T10:02:59.843Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "F:\\project\\pl\\pl-v2\\pl-v2\\Form1.cs",
               "RelativeDocumentMoniker": "pl-v2\\Form1.cs",

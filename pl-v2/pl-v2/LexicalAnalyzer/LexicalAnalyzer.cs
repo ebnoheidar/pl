@@ -8,5 +8,13 @@ namespace pl_v2.LexicalAnalyzer
 {
     internal class LexicalAnalyzer
     {
+        internal string SeeNext()
+        {
+            return "";
+        }
+        internal void Next()
+        {
+
+        }
     }
 }
