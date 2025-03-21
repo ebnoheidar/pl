@@ -24,5 +24,21 @@ namespace pl_v2.LexicalAnalyzer.Lexeme
             Lexemes.Add(new Lexeme("true", "T_True"));
         }
         internal List<Lexeme> Lexemes = new List<Lexeme> ();
+        internal Lexeme CheckKeywordLexeme(string token, LexicalAnalyzer analyzer)
+        {
+            foreach (Lexeme lexeme in Lexemes)
+            {
+                if (lexeme.LexemeName == token)
+                    return lexeme;
+            }
+            return new Lexeme("id", "T_Iⅾ");
+        }
+        internal bool CheckToken(char token, bool preTokenIsLetter = false)
+        {
+            if(char.IsLetter(token) || token == '_' || (preTokenIsLetter & char.IsDigit(token)))
+                return true;
+            else
+                return false;
+        }
     }
 }

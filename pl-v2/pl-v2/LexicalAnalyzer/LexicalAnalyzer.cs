@@ -12,6 +12,10 @@ namespace pl_v2.LexicalAnalyzer
         {
             return "";
         }
+        internal string SeePre()
+        {
+            return "";
+        }
         internal void Next()
         {
 
