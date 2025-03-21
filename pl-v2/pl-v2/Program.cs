@@ -1,4 +1,4 @@
-namespace PL_language
+namespace pl_v2
 {
     internal static class Program
     {
