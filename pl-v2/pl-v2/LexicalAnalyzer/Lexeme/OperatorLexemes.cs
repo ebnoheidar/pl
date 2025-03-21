@@ -28,12 +28,16 @@ namespace pl_v2.LexicalAnalyzer.Lexeme
             OneCharLexemes.Add(new Lexeme("[", "T_ⅬB"));
             OneCharLexemes.Add(new Lexeme(";", "T_Seⅿiⅽoⅼon"));
             OneCharLexemes.Add(new Lexeme("[", "T_ⅬB"));
+            OneCharLexemes.Add(new Lexeme(" ", "T_Whitespaⅽe"));
+            OneCharLexemes.Add(new Lexeme(" ", "T_Whitespaⅽe"));
+            OneCharLexemes.Add(new Lexeme(Environment.NewLine, "T_Whitespaⅽe"));
             TwoCharLexemes.Add(new Lexeme("<=", "T_ROp_ⅬE"));
             TwoCharLexemes.Add(new Lexeme(">=", "T_ROp_GE"));
             TwoCharLexemes.Add(new Lexeme("!=", "T_ROp_NE"));
             TwoCharLexemes.Add(new Lexeme("==", "T_ROp_E"));
             TwoCharLexemes.Add(new Lexeme("&&", "T_ⅬOp_ANⅮ"));
             TwoCharLexemes.Add(new Lexeme("||", "T_ⅬOp_OR"));
+
         }
         internal List<Lexeme> OneCharLexemes = new List<Lexeme>();
         internal List<Lexeme> TwoCharLexemes = new List<Lexeme>();
@@ -48,7 +52,6 @@ namespace pl_v2.LexicalAnalyzer.Lexeme
                         return item;
                     else
                     {
-                        lexicalAnalyzer.Next();
                         lexicalAnalyzer.Next();
                         return twoCharLexeme;
                     }

@@ -24,7 +24,7 @@ namespace pl_v2.LexicalAnalyzer.Lexeme
             Lexemes.Add(new Lexeme("true", "T_True"));
         }
         internal List<Lexeme> Lexemes = new List<Lexeme> ();
-        internal Lexeme CheckKeywordLexeme(string token, LexicalAnalyzer analyzer)
+        internal Lexeme CheckKeywordLexeme(string token)
         {
             foreach (Lexeme lexeme in Lexemes)
             {
