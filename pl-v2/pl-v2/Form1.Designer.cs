@@ -30,11 +30,22 @@
         {
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
-            richTextBox1 = new RichTextBox();
             panel1 = new Panel();
             button1 = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            newToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            openFileCodeToolStripMenuItem = new ToolStripMenuItem();
+            openLexicalAnalyzerResultToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            saveCodeToolStripMenuItem = new ToolStripMenuItem();
+            saveResultToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            tabControl1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -49,18 +60,10 @@
             // 
             // fileToolStripMenuItem
             // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, saveToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(46, 24);
             fileToolStripMenuItem.Text = "File";
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Dock = DockStyle.Fill;
-            richTextBox1.Location = new Point(0, 28);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(961, 523);
-            richTextBox1.TabIndex = 6;
-            richTextBox1.Text = "";
             // 
             // panel1
             // 
@@ -81,13 +84,95 @@
             button1.Text = "execute";
             button1.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 28);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(961, 468);
+            tabControl1.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(953, 435);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "code";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(953, 435);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "lexical res";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // newToolStripMenuItem
+            // 
+            newToolStripMenuItem.Name = "newToolStripMenuItem";
+            newToolStripMenuItem.Size = new Size(224, 26);
+            newToolStripMenuItem.Text = "New";
+            // 
+            // openToolStripMenuItem
+            // 
+            openToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openFileCodeToolStripMenuItem, openLexicalAnalyzerResultToolStripMenuItem });
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(224, 26);
+            openToolStripMenuItem.Text = "Open";
+            // 
+            // openFileCodeToolStripMenuItem
+            // 
+            openFileCodeToolStripMenuItem.Name = "openFileCodeToolStripMenuItem";
+            openFileCodeToolStripMenuItem.Size = new Size(282, 26);
+            openFileCodeToolStripMenuItem.Text = "Open File Code";
+            // 
+            // openLexicalAnalyzerResultToolStripMenuItem
+            // 
+            openLexicalAnalyzerResultToolStripMenuItem.Name = "openLexicalAnalyzerResultToolStripMenuItem";
+            openLexicalAnalyzerResultToolStripMenuItem.Size = new Size(282, 26);
+            openLexicalAnalyzerResultToolStripMenuItem.Text = "Open Lexical Analyzer Result";
+            // 
+            // saveToolStripMenuItem
+            // 
+            saveToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveCodeToolStripMenuItem, saveResultToolStripMenuItem });
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new Size(224, 26);
+            saveToolStripMenuItem.Text = "Save";
+            // 
+            // saveCodeToolStripMenuItem
+            // 
+            saveCodeToolStripMenuItem.Name = "saveCodeToolStripMenuItem";
+            saveCodeToolStripMenuItem.Size = new Size(224, 26);
+            saveCodeToolStripMenuItem.Text = "Save Code";
+            // 
+            // saveResultToolStripMenuItem
+            // 
+            saveResultToolStripMenuItem.Name = "saveResultToolStripMenuItem";
+            saveResultToolStripMenuItem.Size = new Size(224, 26);
+            saveResultToolStripMenuItem.Text = "Save Result";
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(224, 26);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(961, 551);
+            Controls.Add(tabControl1);
             Controls.Add(panel1);
-            Controls.Add(richTextBox1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
@@ -95,6 +180,7 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -103,8 +189,18 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
-        private RichTextBox richTextBox1;
         private Panel panel1;
         private Button button1;
+        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem openFileCodeToolStripMenuItem;
+        private ToolStripMenuItem openLexicalAnalyzerResultToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem saveCodeToolStripMenuItem;
+        private ToolStripMenuItem saveResultToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }
